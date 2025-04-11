@@ -1,0 +1,133 @@
+[
+    {
+      "id": 1,
+      "intrebare": "Care este capitala Franței?",
+      "categorie": "Geografie",
+      "dificultate": "Ușor",
+      "optiuni": {
+        "a": "Paris",
+        "b": "Lyon",
+        "c": "Marsilia",
+        "d": "Nisa"
+      },
+      "corect": "a"
+    },
+    {
+      "id": 2,
+      "intrebare": "Cine a fost primul președinte al Statelor Unite?",
+      "categorie": "Istorie",
+      "dificultate": "Ușor",
+      "optiuni": {
+        "a": "Abraham Lincoln",
+        "b": "George Washington",
+        "c": "Thomas Jefferson",
+        "d": "John Adams"
+      },
+      "corect": "b"
+    },
+    {
+      "id": 3,
+      "intrebare": "Cât este 7 x 8?",
+      "categorie": "Matematică",
+      "dificultate": "Ușor",
+      "optiuni": {
+        "a": "54",
+        "b": "56",
+        "c": "64",
+        "d": "48"
+      },
+      "corect": "b"
+    },
+    {
+      "id": 4,
+      "intrebare": "Cine a scris piesa 'Hamlet'?",
+      "categorie": "Literatură",
+      "dificultate": "Mediu",
+      "optiuni": {
+        "a": "Victor Hugo",
+        "b": "William Shakespeare",
+        "c": "Charles Dickens",
+        "d": "Leo Tolstoi"
+      },
+      "corect": "b"
+    },
+    {
+      "id": 5,
+      "intrebare": "Care este cea mai mare planetă din sistemul solar?",
+      "categorie": "Știință",
+      "dificultate": "Ușor",
+      "optiuni": {
+        "a": "Pământ",
+        "b": "Saturn",
+        "c": "Jupiter",
+        "d": "Neptun"
+      },
+      "corect": "c"
+    },
+    {
+      "id": 6,
+      "intrebare": "În ce an a avut loc Revoluția Franceză?",
+      "categorie": "Istorie",
+      "dificultate": "Greu",
+      "optiuni": {
+        "a": "1789",
+        "b": "1804",
+        "c": "1776",
+        "d": "1812"
+      },
+      "corect": "a"
+    },
+    {
+      "id": 7,
+      "intrebare": "Care este derivata funcției f(x) = x²?",
+      "categorie": "Matematică",
+      "dificultate": "Greu",
+      "optiuni": {
+        "a": "2x",
+        "b": "x",
+        "c": "x²",
+        "d": "1"
+      },
+      "corect": "a"
+    },
+    {
+      "id": 8,
+      "intrebare": "Ce element chimic are simbolul 'Au'?",
+      "categorie": "Știință",
+      "dificultate": "Mediu",
+      "optiuni": {
+        "a": "Argint",
+        "b": "Aur",
+        "c": "Aluminiu",
+        "d": "Oxigen"
+      },
+      "corect": "b"
+    },
+    {
+      "id": 9,
+      "intrebare": "Care este limba oficială în Brazilia?",
+      "categorie": "Geografie",
+      "dificultate": "Ușor",
+      "optiuni": {
+        "a": "Spaniolă",
+        "b": "Portugheză",
+        "c": "Franceză",
+        "d": "Engleză"
+      },
+      "corect": "b"
+    },
+    {
+      "id": 10,
+      "intrebare": "Ce autor a scris romanul '1984'?",
+      "categorie": "Literatură",
+      "dificultate": "Greu",
+      "optiuni": {
+        "a": "Aldous Huxley",
+        "b": "George Orwell",
+        "c": "Ray Bradbury",
+        "d": "H.G. Wells"
+      },
+      "corect": "b"
+    }
+  ]
+  
