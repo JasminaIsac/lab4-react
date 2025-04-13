@@ -5,6 +5,7 @@ const UserContext = createContext();
 export function UserProvider({ children }) {
   const [userName, setUserName] = useState("");
   const [userScore, setUserScore] = useState(0);
+  const [userAnswers, setUserAnswers] = useState([]);
 
   const updateUserName = (newName) => {
     setUserName(newName);
@@ -14,8 +15,12 @@ export function UserProvider({ children }) {
     setUserScore(newScore);
   }
 
+  const updateUserAnswers = (answer) => {
+    setUserAnswers((prevAnswers) => [...prevAnswers, answer]);
+  }
+
   return (
-    <UserContext.Provider value={{ userName, userScore, updateUserName, updateUserScore }}>
+    <UserContext.Provider value={{ userName, userScore, updateUserName, updateUserScore, userAnswers, setUserAnswers, updateUserAnswers }}>
       {children}
     </UserContext.Provider>
   );

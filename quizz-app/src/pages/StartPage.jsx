@@ -9,7 +9,7 @@ import ToggleTheme from "@/components/ToggleTheme";
 import Button from "@/components/Button";
 
 export default function StartPage() {
-  const { updateUserName, updateUserScore } = useUserContext();
+  const { updateUserName, updateUserScore, setUserAnswers, userAnswers } = useUserContext();
   const { theme, toggleTheme } = useThemeContext();
   const { shuffle, timeLimit, updateShuffle, updateTimeLimit } = useQuizOptionsContext();
 
@@ -20,8 +20,12 @@ export default function StartPage() {
 
   const navigate = useNavigate();
 
+
+
 useEffect(() => {
   updateUserScore(0);
+  setUserAnswers([]);
+  console.log(userAnswers);
 }, []);
 
   const handleSubmit = (e) => {

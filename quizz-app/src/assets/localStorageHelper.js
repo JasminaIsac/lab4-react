@@ -17,15 +17,18 @@ export const getUserHistory = () => {
   
   export const addUserHistory = (userName, userScore) => {
     let userHistory = getUserHistory();
-    
-
-    const existingEntry = userHistory.find((entry) => entry.userName === userName && entry.userScore === userScore);
-    if (existingEntry) {
-      return;
-    }
-    const userData = { userName, userScore };
-    userHistory.push(userData);
   
-    saveUserHistory(userHistory);
+    const existingIndex = userHistory.findIndex(entry => entry.userName === userName);
+  
+    if (existingIndex !== -1) {
+      if (userScore > userHistory[existingIndex].userScore) {
+        userHistory[existingIndex].userScore = userScore;
+        saveUserHistory(userHistory);
+      }
+    } else {
+      const userData = { userName, userScore };
+      userHistory.push(userData);
+      saveUserHistory(userHistory);
+    }
   };
   
