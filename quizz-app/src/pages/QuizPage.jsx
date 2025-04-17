@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "@/context/UserContext";
 import { useThemeContext } from "@/context/ThemeContext";
@@ -20,16 +20,20 @@ export default function QuizPage() {
   const [secondsLeft, setSecondsLeft] = useState(timeLimit);
   const isUnlimited = timeLimit === 0;
 
+  const isTimerActive = useRef(false);
+
   useEffect(() => {
     if(shuffle) setQuizQuestions(() => [...questions].sort(() => Math.random() - 0.5));
   }, [shuffle]);
 
   useEffect(() => {
     if (isUnlimited) return;
+    isTimerActive.current = true; 
 
     const timer = setInterval(() => {
       setSecondsLeft((prev) => {
-        if (prev <= 1) {
+        if (prev <= 1 && isTimerActive.current) {
+          isTimerActive.current = false;
           handleAnswer(false);
           return timeLimit;
         }
@@ -54,16 +58,14 @@ export default function QuizPage() {
 
   return (
     <div
-      className={`min-h-screen flex flex-col items-center justify-start py-10 px-4 ${
-        theme === "dark" ? "bg-gray-900 text-white" : "bg-purple-50 text--900"
-      } transition-all duration-300`}
+      className="min-h-screen flex flex-col items-center justify-start py-10 px-4 bg-purple-100 text--900 dark:bg-gray-900 text-white transition-all duration-300"
     >
     <ToggleTheme theme={theme} onClick={toggleTheme} />
 
-      <h1 className="text-3xl font-bold text-purple-500 mb-16">
+      <h1 className="text-3xl font-bold text-purple-500 mb-8">
         Bun venit, {userName}!
       </h1>
-      <p className="mb-4 text-lg">
+      <p className="mb-8 text-xl font-semibold text-purple-800 dark:text-white">
         Întrebarea {currentQuestionIndex + 1} din {quizQuestions.length}
       </p>
 
@@ -73,7 +75,7 @@ export default function QuizPage() {
         </div>
       )}
 
-      <QuizCard question={currentQuestion} onAnswer={handleAnswer} />
+      <QuizCard question={currentQuestion} onAnswer={handleAnswer} key={currentQuestion.id} />
     </div>
   );
 }

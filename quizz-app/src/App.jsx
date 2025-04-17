@@ -5,27 +5,27 @@ import { QuizOptionsProvider } from '@context/QuizOptionsContext';
 import StartPage from '@pages/StartPage';
 import QuizPage from '@/pages/QuizPage';
 import ResultPage from '@/pages/ResultPage';
+import ThemeWrapper from '@components/ThemeWrapper';
 import "@/index.css";
 
 function App() {
-
   return (
-    <>
-      <UserProvider>
-        <ThemeProvider>
+    <UserProvider>
+      <ThemeProvider>
+        <ThemeWrapper>
           <QuizOptionsProvider>
-          <Router> 
-            <Routes>
-              <Route path="/" element={<StartPage />} />
-              <Route path="/QuizPage" element={<QuizPage />} />
-              <Route path="/ResultPage" element={<ResultPage />} />
-            </Routes>
-          </Router>
+            <Router>
+              <Routes>
+                <Route path="/" element={<StartPage />} />
+                <Route path="/QuizPage" element={<QuizPage />} />
+                <Route path="/ResultPage" element={<ResultPage />} />
+              </Routes>
+            </Router>
           </QuizOptionsProvider>
-        </ThemeProvider>
-      </UserProvider>
-    </>
-  )
+        </ThemeWrapper>
+      </ThemeProvider>
+    </UserProvider>
+  );
 }
 
-export default App
+export default App;

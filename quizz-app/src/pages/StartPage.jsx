@@ -21,18 +21,14 @@ export default function StartPage() {
   const navigate = useNavigate();
 
 
-
-useEffect(() => {
-  updateUserScore(0);
-  setUserAnswers([]);
-  console.log(userAnswers);
-}, []);
+  useEffect(() => {
+    updateUserScore(0);
+    setUserAnswers([]);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrorMessage("");
-    console.log({ name, shuffleOption, timeLimitOption, theme });
-
 
     if (!(name).trim()) {
       setErrorMessage("Numele nu poate fi gol");
@@ -46,10 +42,6 @@ useEffect(() => {
       return;
     }
 
-    // if (!timeLimitOption || isNaN(Number(timeLimitOption)) || Number(timeLimitOption) < 0) {
-    //   setErrorMessage("Introdu un timp valid în secunde sau 0 pentru nelimitat.");
-    //   return;
-    // }
     updateUserName( name );
     updateShuffle(shuffleOption === "true");
     updateTimeLimit( timeLimitOption );
